@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <ProjectReference Include="..\Eventos.Domain.Commands\Eventos.Domain.Commands.csproj" />
+      <ProjectReference Include="..\Eventos.Domain.Queries\Eventos.Domain.Queries.csproj" />
+      <ProjectReference Include="..\Eventos.Infra.Data\Eventos.Infra.Data.csproj" />
+  </ItemGroup>
+</Project>
