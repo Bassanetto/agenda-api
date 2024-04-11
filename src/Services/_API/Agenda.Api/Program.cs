@@ -1,36 +1,57 @@
-using Microsoft.AspNetCore.Authentication.Negotiate;
+using Agenda.Api.Configurations;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+
+services.ConfigureDatabase(builder.Configuration);
+
+#region Mapeando interfaces Eventos
+// services.AddTransient<IEventoRepository, EventoRepository>();
+// services.AddTransient<IEventoQueryRepository, EventoQueryRepository>();
+// services.AddTransient<IEventoCommandHandler, EventoCommandHandler>();
+// services.AddTransient<IEventoQueryHandler, EventoQueryHandler>();
+#endregion
+
+services.AddCors(options =>
+{
+    options.AddPolicy("MyAllowedOrigins",
+        policy =>
+        {
+            policy.WithOrigins("*")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-    .AddNegotiate();
-
-builder.Services.AddAuthorization(options =>
+services.AddSwaggerGen(options =>
 {
-    // By default, all incoming requests will be authorized according to the default policy.
-    options.FallbackPolicy = options.DefaultPolicy;
+    options.SwaggerDoc("eventos", new OpenApiInfo
+    {
+        Title = "Eventos",
+        Description = "Breve descrição dos endpoints desta controller.",
+        Version = "eventos"
+    });
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseCors("MyAllowedOrigins");
+
+// app.UseDatabase();
+
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint($"/swagger/eventos/swagger.json", "eventos");
+});
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
