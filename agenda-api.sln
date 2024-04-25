@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{785EBEE2-E13
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8829B5B2-4092-4E1C-8A67-C44CD5C2FAA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eventos", "Eventos", "{27B3E2FF-0D6A-4808-A0DB-C8ADE683B898}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calendario", "Calendario", "{27B3E2FF-0D6A-4808-A0DB-C8ADE683B898}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Application", "src\Services\Eventos\Eventos.Application\Eventos.Application.csproj", "{85837149-581F-44BE-B691-4550F8B0CF7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendario.Application", "src\Services\Calendario\Calendario.Application\Calendario.Application.csproj", "{85837149-581F-44BE-B691-4550F8B0CF7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Domain.Commands", "src\Services\Eventos\Eventos.Domain.Commands\Eventos.Domain.Commands.csproj", "{1B20351B-0FF9-4A2F-A929-9339D692A8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendario.Domain.Commands", "src\Services\Calendario\Calendario.Domain.Commands\Calendario.Domain.Commands.csproj", "{1B20351B-0FF9-4A2F-A929-9339D692A8A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Domain.Queries", "src\Services\Eventos\Eventos.Domain.Queries\Eventos.Domain.Queries.csproj", "{749C6687-429C-4BF8-9EFD-13A3FCDB78BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendario.Domain.Queries", "src\Services\Calendario\Calendario.Domain.Queries\Calendario.Domain.Queries.csproj", "{749C6687-429C-4BF8-9EFD-13A3FCDB78BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventos.Infra.Data", "src\Services\Eventos\Eventos.Infra.Data\Eventos.Infra.Data.csproj", "{6E251D2A-2A93-4FEF-8149-190BDA651190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendario.Infra.Data", "src\Services\Calendario\Calendario.Infra.Data\Calendario.Infra.Data.csproj", "{6E251D2A-2A93-4FEF-8149-190BDA651190}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_API", "_API", "{C1070FA8-CFAE-434E-92AA-2D8223B7BFCE}"
 EndProject

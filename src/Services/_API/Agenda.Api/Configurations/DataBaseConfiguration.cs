@@ -1,3 +1,4 @@
+using Calendario.Application.Configurations;
 
 namespace Agenda.Api.Configurations;
 
@@ -7,13 +8,13 @@ public static class DataBaseConfiguration
     {
         var defaultConnection = configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
         
-        // services.ConfigureDataBaseClientes(defaultConnection);
+        services.ConfigureDataBaseEventos(defaultConnection);
     }
 
     public static void UseDatabase(this IApplicationBuilder app)
     {
         using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>()?.CreateScope();
 
-        // serviceScope.UseDataBaseClientes();
+        serviceScope.UseDataBaseEventos();
     }
 }
