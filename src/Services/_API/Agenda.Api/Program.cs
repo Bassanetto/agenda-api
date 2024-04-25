@@ -1,4 +1,10 @@
 using Agenda.Api.Configurations;
+using Calendario.Domain.Commands.Eventos.CommandHandlers;
+using Calendario.Domain.Commands.Eventos.Repository;
+using Calendario.Domain.Queries.Eventos.QueryHandlers;
+using Calendario.Domain.Queries.Eventos.Repository;
+using Calendario.Infra.Data.Repositories;
+using Calendario.Infra.Data.Repositories.Queries;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,10 +13,10 @@ var services = builder.Services;
 services.ConfigureDatabase(builder.Configuration);
 
 #region Mapeando interfaces Eventos
-// services.AddTransient<IEventoRepository, EventoRepository>();
-// services.AddTransient<IEventoQueryRepository, EventoQueryRepository>();
-// services.AddTransient<IEventoCommandHandler, EventoCommandHandler>();
-// services.AddTransient<IEventoQueryHandler, EventoQueryHandler>();
+services.AddTransient<IEventoRepository, EventoRepository>();
+services.AddTransient<IEventoQueryRepository, EventoQueryRepository>();
+services.AddTransient<IEventoCommandHandler, EventoCommandHandler>();
+services.AddTransient<IEventoQueryHandler, EventoQueryHandler>();
 #endregion
 
 services.AddCors(options =>

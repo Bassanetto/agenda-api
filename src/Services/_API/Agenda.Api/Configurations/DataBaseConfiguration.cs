@@ -1,4 +1,4 @@
-using Evento.Application.Configurations;
+using Calendario.Application.Configurations;
 
 namespace Agenda.Api.Configurations;
 
